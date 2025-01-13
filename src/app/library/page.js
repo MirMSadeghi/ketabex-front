@@ -7,8 +7,12 @@ import Statistics from './statistics'
 
 export default async function Library() {
 
-    const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/books`)
-    const userBooks = await data.json()
+    try{
+        const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/books`)
+        const userBooks = await data.json()
+    } catch (error) {
+        console.error("Error posting request:", error);
+    }
 
     return (
         <div>
