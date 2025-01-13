@@ -1,0 +1,34 @@
+
+@layer primereact, tailwind-base, primeflex, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+:root {
+  --font-family: 'Vazir', sans-serif; 
+}
+
+/* Override PrimeReact font-family */
+.p-component {
+  font-family: 'Vazir', sans-serif !important;
+}
+
+.custom-library {
+  background-image: url("/library.png");
+  background-position: bottom, center;
+}
+
+.custom-addbook {
+  background-image: url("/addbook.jpg");
+  background-position: top, left, right;
+}
+
+.marginm{
+  margin-top: -100px;
+}
