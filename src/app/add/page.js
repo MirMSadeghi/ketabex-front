@@ -1,28 +1,19 @@
 'use client';
 
 import { InputText } from 'primereact/inputtext';
-import CitySelector from '../cityselector';
 import React, { useState, useEffect, useRef } from "react";
-import { DataView } from 'primereact/dataview';
 import { Button } from 'primereact/button';
-import { Fieldset } from 'primereact/fieldset';
-import { FileUpload } from 'primereact/fileupload';
-
 import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
-import { Divider } from 'primereact/divider';
 import { Dropdown } from 'primereact/dropdown';
 import { Toast } from 'primereact/toast';
-
 import { genres, conditions } from '../enums'
         
-
 
 export default function AddBook() {
 
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
-    const [loading, setLoading] = useState(false);
     const [selectedBook, setSelectedBook] = useState(null); 
     const [condition, setCondition] = useState(null);
     const [genre, setGenre] = useState(null);
@@ -174,8 +165,6 @@ export default function AddBook() {
                 <div className='flex justify-content-end align-items-center gap-2 t-flex-1'>
                     <Button onClick={() => clearResult()} className='t-bg-gray-200 t-p-3 t-px-4 t-text-gray-800 t-rounded-md'><i className='pi pi-times-circle'></i></Button>
                     <Button onClick={addBook} className='t-bg-green-600 t-p-2 t-px-5 t-font-medium t-text-white t-rounded-md'>ثبت</Button>
-                    {/* <CitySelector/> */}
-                    {/* <InputText type="text" className="t-w-36 t-border t-rounded-md t-p-2" placeholder="منطقه" /> */}
                 </div>
             </div>
         </div>

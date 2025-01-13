@@ -32,3 +32,123 @@
 .marginm{
   margin-top: -100px;
 }
+
+/* ... */
+/* Styles for request page. */
+.a-card {
+    padding: 30px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+}
+
+/* استایل برای هدر جدول */
+.a-datatable-header {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px 10px 0 0;
+}
+
+/* استایل برای جدول */
+.p-datatable {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* استایل برای ستون‌ها */
+.p-datatable-thead > tr > th {
+    text-align: right;
+    padding: 12px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    color: #333;
+    border-right: 1px solid #ddd;
+}
+
+/* استایل برای سلول‌ها */
+.p-datatable-tbody > tr > td {
+    text-align: right;
+    padding: 12px;
+    font-size: 14px;
+    color: #555;
+    border-right: 1px solid #ddd;
+}
+
+/* استایل برای دکمه‌ها */
+.a-button {
+    padding: 8px 16px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* دکمه تایید */
+.a-button-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+.a-button-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* دکمه رد */
+.a-button-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+
+.a-button-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* تغییر رنگ دکمه‌های غیرفعال */
+.a-button:disabled {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+/* استایل برای سلول وضعیت */
+.a-datatable-status {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+/* وضعیت تایید */
+.status-approved {
+    background-color: #28a745;
+}
+
+/* وضعیت رد */
+.status-rejected {
+    background-color: #dc3545;
+}
+
+/* وضعیت در حال تعلیق */
+.status-pending {
+    background-color: #ffc107;
+}
+
+/* استایل برای صفحه نمایش */
+.a-datatable-gridlines td, .a-datatable-gridlines th {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}

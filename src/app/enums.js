@@ -1,8 +1,8 @@
 
     export const conditions = [
-        {name: 'در حد نو', code: 'Like New'},
-        {name: 'ورق خورده', code: 'Old'},
-        {name: 'تا خورده/پاره', code: 'Deformed'},
+        {name: 'در حد نو', code: 'Like New', severity: 'success'},
+        {name: 'ورق خورده', code: 'Old', severity: 'warning'},
+        {name: 'تا خورده/پاره', code: 'Deformed', severity: 'danger'},
     ]
 
     export const genres = [

@@ -1,11 +1,10 @@
+import { fetcher } from './hoc/fetcher';
 
-import { books } from './service/ProductService';
-import  BookGrid   from './bookgrid';
+import  BookGrid   from './components/bookgrid';
 
 export default async function Home() {
 
-    const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/books`)
-    const books = await data.json()
+    const books = await fetcher('/books');
 
     return (
         <BookGrid data={books}/>

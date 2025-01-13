@@ -1,35 +1,17 @@
 'use client'
 
 import React, { useRef } from 'react';
-import { classNames } from 'primereact/utils';
 import { Button } from 'primereact/button';
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+import { DataView } from 'primereact/dataview';
 import { Tag } from 'primereact/tag';
-import { genres, conditions } from './enums'
-import { ConfirmDialog } from 'primereact/confirmdialog'; // For <ConfirmDialog /> component
-import { confirmDialog } from 'primereact/confirmdialog'; // For confirmDialog method
+import { genres, conditions } from '../enums'
+import { ConfirmDialog } from 'primereact/confirmdialog'; 
+import { confirmDialog } from 'primereact/confirmdialog'; 
 import { Toast } from 'primereact/toast';
 
 export default function BookGrid({ data, layout = 'grid' }){
 
     const toast = useRef(null);
-
-    // TODO: Add human readble name
-    const getSeverity = (book) => {
-        switch (book.condition) {
-            case 'مثل نو':
-                return 'success';
-
-            case 'تا خورده':
-                return 'warning';
-
-            case 'پاره':
-                return 'danger';
-
-            default:
-                return null;
-        }
-    };
 
     const confirmExchange = (bookId) => {
         confirmDialog({
@@ -69,7 +51,7 @@ export default function BookGrid({ data, layout = 'grid' }){
             <div className="col-12 sm:col-6 md:col-6 lg:col-3 p-2" key={book.id}>
                 <div className="p-4 t-h-full flex flex-column border-1 surface-border surface-card border-round">
                     <div className="flex flex-wrap align-items-center justify-content-between gap-2">
-                        <Tag value={book.condition} severity={getSeverity(book)}></Tag>
+                        <Tag value={book.condition} severity={conditions.find(obj => obj.code === book.condition)?.severity}></Tag>
                         <div className="flex align-items-center gap-2">
                             <span className="font">{book.location}</span>
                             <i className="pi pi-map-marker"></i>
@@ -90,17 +72,8 @@ export default function BookGrid({ data, layout = 'grid' }){
         );
     };
 
-    const itemTemplate = (book, layout, index) => {
-        if (!book) {
-            return;
-        }
-
-        if (layout === 'list') return listItem(book, index);
-        else if (layout === 'grid') return gridItem(book);
-    };
-
-    const listTemplate = (books, layout) => {
-        return <div className="grid grid-nogutter">{books.map((book, index) => itemTemplate(book, layout, index))}</div>;
+    const gridTemplate = (books) => {
+        return <div className="grid grid-nogutter">{books.map((book) => gridItem(book))}</div>;
     };
 
     // const header = () => {
@@ -115,7 +88,7 @@ export default function BookGrid({ data, layout = 'grid' }){
         <div className="card">
              <Toast ref={toast} />
              <ConfirmDialog />
-            <DataView value={data} listTemplate={listTemplate(data, layout)} layout={layout} />
+            <DataView value={data} listTemplate={gridTemplate(data)} layout='grid' />
         </div>
     )
 }

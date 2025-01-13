@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Menubar } from 'primereact/menubar';
-import { Button, Buuton } from 'primereact/button';
+import { Button } from 'primereact/button';
 import { Avatar } from 'primereact/avatar';
         
 
@@ -29,7 +29,7 @@ const Navbar = () => {
         {
             label: 'افزودن کتاب',
             icon: 'pi pi-plus-circle ml-2',
-            command: () => router.push('/add-book')
+            command: () => router.push('/add')
         },
     ];
 

@@ -1,31 +1,12 @@
-import { classNames } from 'primereact/utils'
-import BookGrid from '../bookgrid'
-import { books } from '../service/ProductService'
+import { fetcher } from '../hoc/fetcher';
+
+import BookGrid from '../components/bookgrid'
 import ProfileHeader from './profile'
 import Statistics from './statistics'
 
-export async function getServerSideProps() {
-    let userBooks = [];
+export default async function Library() {
 
-    try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/books`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        userBooks = await response.json();
-    } catch (error) {
-        console.error("Error fetching books:", error);
-    }
-
-    return {
-        props: {
-            userBooks,
-        },
-    };
-}
-
-
-export default async function Library({ userBooks }) {
+    const userBooks = await fetcher('/books');
 
     return (
         <div>
