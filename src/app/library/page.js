@@ -4,15 +4,28 @@ import { books } from '../service/ProductService'
 import ProfileHeader from './profile'
 import Statistics from './statistics'
 
+export async function getServerSideProps() {
+    let userBooks = [];
 
-export default async function Library() {
-
-    try{
-        const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/books`)
-        const userBooks = await data.json()
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/books`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        userBooks = await response.json();
     } catch (error) {
-        console.error("Error posting request:", error);
+        console.error("Error fetching books:", error);
     }
+
+    return {
+        props: {
+            userBooks,
+        },
+    };
+}
+
+
+export default async function Library({ userBooks }) {
 
     return (
         <div>
