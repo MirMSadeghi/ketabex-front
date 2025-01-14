@@ -31,6 +31,11 @@ const Navbar = () => {
             icon: 'pi pi-plus-circle ml-2',
             command: () => router.push('/add')
         },
+        {
+            label: 'صفحه مبادلات',
+            icon: 'pi pi-plus-circle ml-2',
+            command: () => router.push('/requests')
+        },
     ];
 
     return (
