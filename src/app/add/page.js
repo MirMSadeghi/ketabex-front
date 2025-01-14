@@ -40,7 +40,7 @@ export default function AddBook() {
         }
     
         const fetchResults = async () => {
-        setLoading(true);
+
         try {
             const response = await fetch(
             `https://api.fidibo.com/flex/search/result?query=${debouncedQuery}`
@@ -51,7 +51,6 @@ export default function AddBook() {
         } catch {
             setResults([]);
         } finally {
-            setLoading(false);
         }
         };
     
