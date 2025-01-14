@@ -54,20 +54,6 @@ The **Backend** will be developed using **Django REST Framework**, which is not 
    ```
    The application will be available at `http://localhost:3000`.
 
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
-5. **Start the production server**:
-   ```bash
-   npm start
-   ```
-
-6. **Run linting checks**:
-   ```bash
-   npm run lint
-   ```
-
 ---
 
 ## 📋 License
