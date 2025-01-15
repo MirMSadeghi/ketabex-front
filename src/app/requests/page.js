@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
-import './styles.css';  // وارد کردن فایل استایل
+// import './styles.css';  // وارد کردن فایل استایل
 
 /////for fetching from api
 /*
@@ -74,14 +74,14 @@ export default function TemplateDemo() {
                 <Button
                     label="قبول"
                     icon="pi pi-check"
-                    className="p-button-success"
+                    className="a-button-success"
                     onClick={() => handleAccept(rowData)}
                     disabled={isDisabled}
                 />
                 <Button
                     label="رد"
                     icon="pi pi-times"
-                    className="p-button-danger"
+                    className="a-button-danger"
                     onClick={() => handleReject(rowData)}
                     disabled={isDisabled}
                 />
@@ -108,12 +108,12 @@ export default function TemplateDemo() {
                 value={requests}
                 tableStyle={{ minWidth: '60rem' }}
                 responsiveLayout="scroll"
-                className="p-datatable-gridlines"
+                className="a-datatable-gridlines"
             >
                 <Column field="username" header="نام کاربری" body={(rowData) => columnTemplate(rowData.username)} />
                 <Column field="bookToTake" header="کتابی که باید بگیرید" body={(rowData) => columnTemplate(rowData.bookToTake)} />
                 <Column field="bookForOthers" header="کتابی که باید بدهید" body={(rowData) => columnTemplate(rowData.bookForOthers)} />
-                <Column field="status" header="وضعیت" body={(rowData) => <div className={`p-datatable-status ${getStatusClass(rowData.status)}`}>{rowData.status}</div>} />
+                <Column field="status" header="وضعیت" body={(rowData) => <div className={`a-datatable-status ${getStatusClass(rowData.status)}`}>{rowData.status}</div>} />
                 <Column header="عملیات" body={actionBodyTemplate} />
             </DataTable>
         </div>
@@ -186,15 +186,15 @@ export default function TemplateDemo() {
                 <Button
                     label="قبول"
                     icon="pi pi-check"
-                    className="p-button-success"
+                    className="a-button-success"
                     onClick={() => handleAccept(rowData)}
                     disabled={isDisabled}
                 />
                 <Button
                     label="رد"
                     icon="pi pi-times"
-                    className="p-button-danger"
-                    onClick={() => handleReject(rowData)}
+                    className="a-button-danger"
+                    onCick={() => handleReject(rowData)}
                     disabled={isDisabled}
                 />
             </div>
@@ -211,12 +211,12 @@ export default function TemplateDemo() {
                 value={requests}
                 tableStyle={{ minWidth: '60rem' }}
                 responsiveLayout="scroll"
-                className="p-datatable-gridlines"
+                className="a-datatable-gridlines"
             >
                 <Column field="username" header="نام کاربری" body={(rowData) => columnTemplate(rowData.username)} />
                 <Column field="bookToTake" header="کتابی که باید بگیرید" body={(rowData) => columnTemplate(rowData.bookToTake)} />
                 <Column field="bookForOthers" header="کتابی که باید بدهید" body={(rowData) => columnTemplate(rowData.bookForOthers)} />
-                <Column field="status" header="وضعیت" body={(rowData) => <div className={`p-datatable-status ${getStatusClass(rowData.status)}`}>{rowData.status}</div>} />
+                <Column field="status" header="وضعیت" body={(rowData) => <div className={`a-datatable-status ${getStatusClass(rowData.status)}`}>{rowData.status}</div>} />
                 <Column header="عملیات" body={actionBodyTemplate} />
             </DataTable>
         </div>
