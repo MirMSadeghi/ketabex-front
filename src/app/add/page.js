@@ -90,6 +90,7 @@ export default function AddBook() {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
+                        "Authorization": `Token ${localStorage.getItem('token')}`
                     },
                     body: JSON.stringify({
                         title: selectedBook.title,

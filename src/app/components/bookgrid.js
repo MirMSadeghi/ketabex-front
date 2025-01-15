@@ -46,6 +46,7 @@ export default function BookGrid({ data, layout = 'grid' }){
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": `Token ${localStorage.getItem('token')}`
                 },
                 body: JSON.stringify({
                     book: bookId,
