@@ -28,7 +28,7 @@ const Navbar = () => {
         {
             label: ' کتابخانه عمومی' ,
             icon: 'pi pi-home ml-2',
-            command: () => router.push('/public_library')
+            command: () => router.push('/')
         },
     ];
 
@@ -71,7 +71,7 @@ const Navbar = () => {
                     </Button>
                 ) : (
                     <Button 
-                         className='t-bg-white mx-3 border-2 border-gray-300 rounded-full p-3 hover:bg-gray-100 transition-all ease-in-out'
+                         className='t-bg-white mx-3 t-rounded-full border-2 border-gray-300 rounded-full p-2 px-3 hover:bg-gray-100 transition-all ease-in-out'
 
                         label="ورود / ثبت‌نام" 
                         onClick={() => router.push('/authentication')} 
