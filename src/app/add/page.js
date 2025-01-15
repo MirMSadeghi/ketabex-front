@@ -7,6 +7,7 @@ import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
 import { Dropdown } from 'primereact/dropdown';
 import { Toast } from 'primereact/toast';
+import { genres } from '../enums';
         
 
 export default function AddBook() {
