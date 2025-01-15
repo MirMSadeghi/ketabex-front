@@ -7,7 +7,6 @@ import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
 import { Dropdown } from 'primereact/dropdown';
 import { Toast } from 'primereact/toast';
-import { genres, conditions } from '../enums'
         
 
 export default function AddBook() {
@@ -18,6 +17,12 @@ export default function AddBook() {
     const [condition, setCondition] = useState(null);
     const [genre, setGenre] = useState(null);
     const toast = useRef(null);
+
+    const conditions = [
+        {name: 'در حد نو', code: 'Like New'},
+        {name: 'ورق خورده', code: 'Old'},
+        {name: 'تا خورده/پاره', code: 'Deformed'},
+    ]
     
     // Debounce function
     const useDebounce = (value, delay) => {
@@ -57,10 +62,6 @@ export default function AddBook() {
         fetchResults();
     }, [debouncedQuery]);
     
-    const onUpload = () => {
-        // toast.current.show({ severity: 'info', summary: 'Success', detail: 'File Uploaded' });
-    };
-
     const handleSelectBook = async (bookId) => {
         setResults([])
         setQuery('')

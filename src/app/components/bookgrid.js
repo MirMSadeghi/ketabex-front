@@ -4,7 +4,6 @@ import React, { useRef } from 'react';
 import { Button } from 'primereact/button';
 import { DataView } from 'primereact/dataview';
 import { Tag } from 'primereact/tag';
-import { genres, conditions } from '../enums'
 import { ConfirmDialog } from 'primereact/confirmdialog'; 
 import { confirmDialog } from 'primereact/confirmdialog'; 
 import { Toast } from 'primereact/toast';
@@ -12,6 +11,23 @@ import { Toast } from 'primereact/toast';
 export default function BookGrid({ data, layout = 'grid' }){
 
     const toast = useRef(null);
+
+    const getSeverity = (book) => {
+        switch (book.condition) {
+            case 'مثل نو':
+                return 'success';
+
+            case 'تا خورده':
+                return 'warning';
+
+            case 'پاره':
+                return 'danger';
+
+            default:
+                return null;
+        }
+    };
+
 
     const confirmExchange = (bookId) => {
         confirmDialog({
@@ -51,7 +67,7 @@ export default function BookGrid({ data, layout = 'grid' }){
             <div className="col-12 sm:col-6 md:col-6 lg:col-3 p-2" key={book.id}>
                 <div className="p-4 t-h-full flex flex-column border-1 surface-border surface-card border-round">
                     <div className="flex flex-wrap align-items-center justify-content-between gap-2">
-                        <Tag value={book.condition} severity={conditions.find(obj => obj.code === book.condition)?.severity}></Tag>
+                        <Tag value='New' severity='info'></Tag>
                         <div className="flex align-items-center gap-2">
                             <span className="font">{book.location}</span>
                             <i className="pi pi-map-marker"></i>
